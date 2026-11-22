@@ -18,7 +18,8 @@
         header("Location: ../signup.php?pesan=email_terpakai");
         exit();
     } else {
-        $query = "INSERT INTO akun (email, password) VALUES ('$email', '$password')";
+        // PERBAIKAN: Menambahkan kolom ID NULL agar AUTO_INCREMENT berjalan
+        $query = "INSERT INTO akun (id, email, password) VALUES (NULL, '$email', '$password')";
 
         if(mysqli_query($koneksi, $query)) {
             header("Location: ../login.php?pesan=akun_dibuat");

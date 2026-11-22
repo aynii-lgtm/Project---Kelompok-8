@@ -34,37 +34,7 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        .nav-avatar {
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--primary-color);
-            display: block;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 18px;
-            margin-top: 36px;
-        }
-        .eyebrow::before {
-            content: '';
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--primary-color);
-        }
-
         .about-title {
-            font-family: var(--serif);
             font-weight: 500;
             font-size: clamp(2rem, 4.2vw, 3rem);
             line-height: 1.15;
@@ -83,7 +53,7 @@
             font-size: 0.85rem;
             line-height: 1.75;
             color: var(--text-muted);
-            margin-bottom: 40px;
+            margin-bottom: 20px;
         }
 
         /* ---------- Tabs ---------- */
@@ -91,7 +61,6 @@
             display: flex;
             gap: 28px;
             border-bottom: 1px solid var(--line);
-            overflow-x: auto;
         }
         .tab-btn {
             background: none;
@@ -115,7 +84,6 @@
             background: var(--primary-color);
         }
 
-        /* ---------- Panel ---------- */
         .tab-panel { display: none; padding: 56px 0 80px; }
         .tab-panel.active { display: block; }
 
@@ -165,7 +133,6 @@
             border-top: 1px solid var(--line);
         }
         .stat-num {
-            font-family: var(--serif);
             font-size: 1.7rem;
             line-height: 1.1;
             color: var(--primary-dark);
@@ -231,7 +198,7 @@
                 Prinsip itu terus kami pegang di setiap mangkuk yang kami sajikan.
             </p>
 
-            <div class="about-tabs" role="tablist">
+            <div class="about-tabs">
                 <button class="tab-btn active" role="tab" data-tab="cerita">Fakta &amp; Cerita Brand</button>
                 <button class="tab-btn" role="tab" data-tab="bahan">Sumber Bahan &amp; Kualitas</button>
                 <button class="tab-btn" role="tab" data-tab="tim">Tim &amp; Kepemimpinan</button>
@@ -278,9 +245,10 @@
                     <img src="pictures/bahan.jpeg" alt="Bahan baku Mie Kiro" onerror="this.style.display='none'">
                 </div>
                 <div class="panel-text">
-                    <h2 class="panel-heading">Bahan pilihan, diolah dengan standar yang disiplin.</h2>
-                    <p>Kualitas mie dimulai dari bahan bakunya. Kami memilih bahan dengan standar mutu yang jelas dan memeriksanya sejak diterima di dapur, supaya hanya bahan terbaik yang sampai ke mangkuk pelanggan.</p>
-                    <p>Kebersihan dan keamanan pangan adalah hal yang tidak bisa ditawar. Setiap tahap pengolahan mengikuti prosedur kerja yang baku, dan kami terus berupaya menjalankan usaha yang berkelanjutan, mulai dari pengelolaan bahan yang efisien sampai hubungan jangka panjang dengan pemasok.</p>
+                    <h2 class="panel-heading">Bahan pilihan diolah dengan standar yang disiplin.</h2>
+                    <p>Kami percaya bahwa cita rasa mie yang istimewa dimulai jauh sebelum proses memasak. Oleh karena itu, kami sangat selektif dalam memilih bahan baku, mulai dari tepung terigu berkualitas tinggi hingga rempah-rempah segar pilihan. Setiap bahan yang tiba di dapur kami menjalani pemeriksaan ketat untuk memastikan kesegarannya, sehingga hanya material terbaik yang lolos standar mutu kami dan siap diolah menjadi hidangan istimewa.</p>
+                    <p>Bagi kami, kebersihan bukan sekadar aturan, melainkan komitmen terhadap kesehatan pelanggan. Setiap tahap pengolahan, mulai dari pencucian, peracikan bumbu, hingga penyajian dilakukan dengan mengikuti prosedur kerja yang baku dan higienis. Dapur kami dikelola dengan standar sanitasi tinggi untuk menjamin bahwa setiap mangkuk mie yang tersaji aman, bersih, dan bebas dari kontaminasi.</p>
+                    <p>Kami tidak hanya berfokus pada hasil akhir, tetapi juga pada proses yang bertanggung jawab. Kami terus berupaya menjalankan usaha yang berkelanjutan melalui pengelolaan bahan yang efisien untuk meminimalkan limbah. Selain itu, kami membangun hubungan jangka panjang yang saling menguntungkan dengan para pemasok lokal, memastikan bahwa rantai pasokan kami tetap stabil dan mendukung pertumbuhan ekonomi sekitar. Dengan cara ini, kami berharap dapat terus menyajikan mie terbaik sambil menjaga kelestarian lingkungan dan komunitas.</p>
                 </div>
             </div>
         </section>
@@ -293,8 +261,9 @@
                 </div>
                 <div class="panel-text">
                     <h2 class="panel-heading">Tim yang kompeten di balik setiap mangkuk.</h2>
-                    <p>Rasa yang konsisten hanya bisa dijaga oleh tim yang terlatih dan berdedikasi. Karena itu Mie Kiro menaruh perhatian besar pada pengembangan sumber daya manusia, dari pelatihan standar kerja sampai budaya kerja yang disiplin dan saling mendukung.</p>
-                    <p>Dipimpin oleh tim manajemen yang berkomitmen pada kualitas dan kepuasan pelanggan, kami terus mengembangkan usaha dengan langkah yang terukur, supaya Mie Kiro semakin dipercaya sebagai pilihan mie pedas masyarakat Indonesia.</p>
+                    <p>Rasa yang konsisten hanya bisa dijaga oleh tim yang terlatih dan berdedikasi. Karena itu, Mie Kiro menaruh perhatian besar pada pengembangan sumber daya manusia melalui program pelatihan standar kerja yang berkelanjutan serta penerapan budaya kerja yang disiplin namun tetap saling mendukung antar sesama anggota tim. Kami percaya bahwa kompetensi teknis saja tidak cukup; setiap staf juga dibekali dengan pemahaman mendalam tentang filosofi rasa kami agar mampu menyajikan hidangan dengan ketulusan dan presisi di setiap porsinya.</p>
+                    <p>Dipimpin oleh tim manajemen yang berkomitmen penuh terhadap kualitas dan kepuasan pelanggan, kami memastikan setiap proses operasional berjalan sesuai prosedur baku tanpa mengorbankan kehangatan pelayanan kepada setiap pengunjung yang datang. Evaluasi kinerja dilakukan secara berkala untuk menjaga standar tertinggi, sekaligus memberikan ruang bagi karyawan untuk menyampaikan ide-ide kreatif yang dapat meningkatkan pengalaman bersantap pelanggan secara keseluruhan.</p>
+                    <p>Kami terus mengembangkan usaha dengan langkah yang terukur dan strategis, mulai dari inovasi menu hingga peningkatan fasilitas, supaya Mie Kiro semakin dipercaya sebagai pilihan mie pedas terbaik bagi masyarakat Indonesia di masa depan.</p>
                 </div>
             </div>
         </section>

@@ -267,7 +267,7 @@
         <div class="container d-flex justify-content-between align-items-center">
             <div class="nav-container">
                 <a href="#" class="navbar-brand d-flex align-items-center gap-2">
-                    <img src="M.png" alt="Logo Mie Kiro">
+                    <img src="pictures/M.png" alt="Logo Mie Kiro">
                     <span style="font-weight: 700; color: var(--primary-color); font-size: 1.3rem;">Mie Kiro</span>
                 </a>
 
