@@ -16,6 +16,10 @@ html {
     overflow-y: scroll;
 }
 
+.eyebrow {
+    margin-top: 36px;
+}
+
 .top-navbar {
     position: sticky;
     top: 0;

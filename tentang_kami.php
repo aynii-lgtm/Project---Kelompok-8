@@ -193,7 +193,7 @@
         <div class="container d-flex justify-content-between align-items-center">
             <div class="nav-container">
                 <a href="#" class="navbar-brand d-flex align-items-center gap-2">
-                    <img src="M.png" alt="Logo Mie Kiro">
+                    <img src="pictures/M.png" alt="Logo Mie Kiro">
                     <span style="font-weight: 700; color: var(--primary-color); font-size: 1.3rem;">Mie Kiro</span>
                 </a>
 
@@ -220,7 +220,7 @@
     <!-- Hero -->
     <header class="about-hero">
         <div class="container">
-            <div class="eyebrow" style="mt: 15px;">Tentang Kami</div>
+            <div class="eyebrow";>Tentang Kami</div>
             <h1 class="about-title">
                 Mie pedas pilihan Indonesia,
                 <em>bermula dari satu mangkuk mie.</em>
@@ -246,7 +246,7 @@
         <section class="tab-panel active" id="tab-cerita" role="tabpanel">
             <div class="panel-grid">
                 <div class="panel-img">
-                    <img src="outlet.png" alt="Suasana Mie Kiro" onerror="this.style.display='none'">
+                    <img src="pictures/outlet.png" alt="Suasana Mie Kiro" onerror="this.style.display='none'">
                 </div>
                 <div class="panel-text">
                     <h2 class="panel-heading">Dari kecintaan pada pedas menjadi restoran mie kepercayaan.</h2>
@@ -275,7 +275,7 @@
         <section class="tab-panel" id="tab-bahan" role="tabpanel">
             <div class="panel-grid">
                 <div class="panel-img">
-                    <img src="img/tentang_bahan.jpg" alt="Bahan baku Mie Kiro" onerror="this.style.display='none'">
+                    <img src="pictures/bahan.jpeg" alt="Bahan baku Mie Kiro" onerror="this.style.display='none'">
                 </div>
                 <div class="panel-text">
                     <h2 class="panel-heading">Bahan pilihan, diolah dengan standar yang disiplin.</h2>
@@ -289,7 +289,7 @@
         <section class="tab-panel" id="tab-tim" role="tabpanel">
             <div class="panel-grid">
                 <div class="panel-img">
-                    <img src="img/tentang_tim.jpg" alt="Tim Mie Kiro" onerror="this.style.display='none'">
+                    <img src="pictures/karyawan.png" alt="Tim Mie Kiro" onerror="this.style.display='none'">
                 </div>
                 <div class="panel-text">
                     <h2 class="panel-heading">Tim yang kompeten di balik setiap mangkuk.</h2>
