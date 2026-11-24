@@ -11,15 +11,16 @@
     $query = mysqli_query($koneksi, "SELECT * FROM akun WHERE id = '$id'");
     $user = mysqli_fetch_assoc($query);
 
+    $email = $user['email'];
+    $foto = '';
+    if (!empty($user['foto_profil'])) {
+        $foto = 'uploads/' . htmlspecialchars($user['foto_profil']);
+    }
+
     if (!$user) {
         header("Location: backend/logout.php");
         exit();
     }
-
-    $email = $user['email']; // dipakai di navbar ("Hi, ...")
-
-    $file_foto = glob(__DIR__ . '/uploads/u' . $id . '.*');
-    $foto = $file_foto ? 'uploads/' . basename($file_foto[0]) . '?v=' . filemtime($file_foto[0]) : '';
 ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -35,13 +36,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        :root {
-            --primary-color: #d61218;
-            --bg-peach: #fdf5f0;
-            --card-bg: #ffffff;
-            --text-dark: #2c3e50;
-            --text-muted: #6c757d;
-        }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -81,8 +75,8 @@
             justify-content: space-between;
             padding: 16px 16px 16px 17px;
             border-bottom: 1px solid #ececec;
-            font-size: 15px;
-            color: #555;
+            font-size: 17px;
+            color: #000;
         }
 
         .close {
@@ -91,7 +85,7 @@
             width: 28px;
             height: 28px;
             border-radius: 8px;
-            color: #444;
+            color: #d61218;
             text-decoration: none;
         }
         .close:hover { background: #f1f1f1; }
@@ -161,7 +155,6 @@
         .photo-hint { margin-top: 6px; font-size: 11px; color: #666; }
         .photo-error { margin-top: 6px; font-size: 11px; color: #c0392b; min-height: 14px; }
 
-        /* Dibatasi di dalam card supaya tidak mengubah tombol "Keluar" di navbar */
         .profil-card .btn {
             font: inherit;
             font-size: 13px;
@@ -179,7 +172,7 @@
             padding: 8px 14px;
             background: #fff;
             border: 1px solid #e2e2e2;
-            color: #222;
+            color: #d61218;
         }
         .btn-outline:hover { background: #f7f7f7; }
 
@@ -218,7 +211,7 @@
             background: #fff;
             font: inherit;
             font-size: 13px;
-            color: #1a1a1a;
+            color: #d61218;
         }
         .field input::placeholder { color: #a5a5a5; }
         .field input:hover { border-color: #d6d6d6; }
@@ -235,16 +228,15 @@
             display: inline-flex;
             align-items: center;
             background: #fff;
-            border: 1px solid #e2e2e2;
-            color: #444;
+            border: 1px solid #d61218;
+            color: #d61218;
             text-decoration: none;
         }
-        .btn-cancel:hover { background: #f7f7f7; }
+
         .btn-save {
             padding: 0 14px;
             height: 32px;
-            background: #1f1f1f;
-            border: 1px solid #1f1f1f;
+            background: #d61218;
             color: #fff;
         }
         .btn-save:hover { background: #000; }
@@ -286,7 +278,7 @@
                         <i class="bi bi-person-circle" style="font-size: 1.6rem; line-height: 1;"></i>
                     <?php } ?>
                 </a>
-                <a href="logout.php" class="btn btn-outline-danger btn-sm rounded-pill px-3">Keluar</a>
+                <a href="backend/logout.php" class="btn btn-outline-danger btn-sm rounded-pill px-3">Keluar</a>
             </div>
         </div>
     </nav>
@@ -363,9 +355,13 @@
                     </div>
 
                     <div class="actions">
-                        <a class="btn btn-cancel" href="javascript:history.back()">Batal</a>
                         <button type="submit" class="btn btn-save">Simpan perubahan</button>
+                        <button type="button" class="btn btn-cancel"
+                                onclick="if(confirm(
+                                    'Yakin ingin menghapus akun ini secara permanen? Semua data pesanan akan hilang.')) window.location.href='backend/delete_account.php?id=<?php echo $id; ?>'"
+                        >Hapus akun</button>
                     </div>
+                    
                 </div>
             </div>
         </form>

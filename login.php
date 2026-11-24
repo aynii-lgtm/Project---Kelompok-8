@@ -37,7 +37,6 @@
         }
         #login-title h1{ font-weight: bold; margin-bottom: 0; }
         
-        /* Style untuk Input Form */
         .form-control {
             background-color: #f79396;
             border-radius: 50px;
@@ -48,7 +47,6 @@
         }
         .form-control::placeholder { color: white; opacity: 0.8; }
         
-        /* Wrapper untuk icon di dalam input */
         .input-wrapper {
             position: relative;
             margin-bottom: 25px;
@@ -83,7 +81,6 @@
         p, a { color: white; font-size: 15px; }
         a:hover { color: white; text-decoration: underline; }
 
-        /* Style khusus untuk checkbox agar rata tengah */
         .remember-me-wrapper {
             display: flex;
             align-items: center;
@@ -103,14 +100,6 @@
             cursor: pointer;
             accent-color: #d61218;
         }
-
-        /* ===== ALERT BENTUK PILL (WARNA TETAP BOOTSTRAP) ===== */
-        .alert-pill {
-            border-radius: 50px !important;
-            padding: 12px 25px !important;
-            margin-bottom: 25px;
-            border: none !important; /* Hapus border default Bootstrap biar lebih clean */
-        }
     </style>
 </head>
 <body>
@@ -124,21 +113,19 @@
             <?php 
                 if(isset($_GET['pesan'])) {
                     $pesan = $_GET['pesan'];
-                    $alertClass = '';
-                    $alertMsg = '';
-                    
-                    // Mapping pesan ke class warna Bootstrap & teks
-                    switch($pesan) {
-                        case "belum_login": $alertClass = 'warning'; $alertMsg = 'Anda belum login'; break;
-                        case "logout":      $alertClass = 'primary'; $alertMsg = 'Anda berhasil logout'; break;
-                        case "data_salah":  $alertClass = 'danger';  $alertMsg = 'Email atau password salah'; break;
-                        case "akun_dibuat": $alertClass = 'success'; $alertMsg = 'Akun berhasil dibuat'; break;
-                        case "harus_diisi": $alertClass = 'warning'; $alertMsg = 'Email dan password harus diisi'; break;
-                    }
 
-                    if($alertClass) {
-                        // Gunakan class alert-pill + class warna dinamis dari $alertClass
-                        echo '<div class="alert alert-'.$alertClass.' alert-pill text-center">'.$alertMsg.'</div>';
+                    if($pesan == 'belum_login') {
+                        echo ' <div class="alert alert-warning">Anda belum login</div>';
+                    } elseif($pesan == "akun_dibuat") {
+                        echo ' <div class = "alert alert-success">Akun berhasil dibuat</div>';
+                    } elseif($pesan == "harus_diisi") {
+                        echo ' <div class = "alert alert-danger">Email dan password harus diisi</div>';
+                    } elseif($pesan == "logout") {
+                        echo ' <div class = "alert alert-primary">Anda berhasil logout</div>';
+                    } elseif($pesan == "akun_dihapus") {
+                        echo ' <div class = "alert alert-primary">Akun berhasil dihapus</div>';
+                    } elseif($pesan == "data_salah") {
+                        echo '<div class = "alert alert-danger">Email atau password salah</div>';
                     }
                 }
             ?>
