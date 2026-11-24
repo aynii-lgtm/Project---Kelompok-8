@@ -17,7 +17,7 @@
     if ($result && mysqli_num_rows($result) > 0) {
         $user = mysqli_fetch_assoc($result);
 
-        if ($password === $user['password']) {
+        if ($password == $user['password']) {
             $_SESSION['status'] = true;
             $_SESSION['email'] = $user['email'];
             $_SESSION['id'] = $user['id'];
